@@ -1,0 +1,190 @@
+{
+  "manifest_version": 3,
+  "name": "Piniso – Funny AI Study Buddy",
+  "short_name": "Piniso",
+  "version": "4.1.0",
+  "description": "Don’t just watch it — Piniso it. AI notes, instant quizzes, flashcards, voice tutor & a focus guardian for every lecture.",
+  "author": "Eka",
+  "homepage_url": "https://aaradhybadjatya.com",
+  "minimum_chrome_version": "116",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Piniso",
+    "default_popup": "pages/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png"
+    }
+  },
+  "options_page": "pages/options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "scripting",
+    "activeTab",
+    "tabCapture",
+    "offscreen",
+    "contextMenus",
+    "declarativeNetRequest",
+    "alarms",
+    "tabs",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://api.groq.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://api.openai.com/*",
+    "https://openrouter.ai/*",
+    "https://*.youtube.com/*",
+    "https://www.youtube-nocookie.com/*",
+    "https://*.unacademy.com/*",
+    "https://*.pw.live/*",
+    "https://*.khanacademy.org/*",
+    "https://*.coursera.org/*",
+    "https://*.udemy.com/*",
+    "https://*.vedantu.com/*",
+    "https://*.byjus.com/*",
+    "https://*.nptel.ac.in/*",
+    "https://*.edx.org/*"
+  ],
+  "optional_host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/*",
+        "https://www.youtube-nocookie.com/*"
+      ],
+      "js": [
+        "content/main-world.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://*.youtube.com/*",
+        "https://www.youtube-nocookie.com/*",
+        "https://*.unacademy.com/*",
+        "https://*.pw.live/*",
+        "https://*.khanacademy.org/*",
+        "https://*.coursera.org/*",
+        "https://*.udemy.com/*",
+        "https://*.vedantu.com/*",
+        "https://*.byjus.com/*",
+        "https://*.nptel.ac.in/*",
+        "https://*.edx.org/*"
+      ],
+      "js": [
+        "vendor/katex/katex.min.js",
+        "shared/defaults.js",
+        "shared/lines.js",
+        "shared/store.js",
+        "shared/md.js",
+        "shared/icons.js",
+        "shared/pet.js",
+        "shared/audio.js",
+        "content/ui-css.js",
+        "content/v4-css.js",
+        "content/util.js",
+        "content/video.js",
+        "content/transcript.js",
+        "content/timeline.js",
+        "content/brain.js",
+        "content/ui.js",
+        "content/quiz.js",
+        "content/report.js",
+        "content/talk.js",
+        "content/extras.js",
+        "content/plus.js",
+        "content/magic.js",
+        "content/v4.js",
+        "content/app.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://*.youtube.com/*",
+        "https://www.youtube-nocookie.com/*",
+        "https://*.unacademy.com/*",
+        "https://*.pw.live/*",
+        "https://*.khanacademy.org/*",
+        "https://*.coursera.org/*",
+        "https://*.udemy.com/*",
+        "https://*.vedantu.com/*",
+        "https://*.byjus.com/*",
+        "https://*.nptel.ac.in/*",
+        "https://*.edx.org/*"
+      ],
+      "js": [
+        "vendor/three/pz3.min.js",
+        "shared/pet3d.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/fonts/*",
+        "assets/grain.png",
+        "assets/icons/*",
+        "vendor/katex/fonts/*",
+        "pages/guardian.html",
+        "assets/3d/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "commands": {
+    "toggle-desk": {
+      "suggested_key": {
+        "default": "Alt+Shift+P"
+      },
+      "description": "Open / close the Piniso study desk"
+    },
+    "listen-tab": {
+      "suggested_key": {
+        "default": "Alt+Shift+L"
+      },
+      "description": "Let Piniso listen to this video's audio (for sites without captions)"
+    },
+    "snap-board": {
+      "suggested_key": {
+        "default": "Alt+Shift+S"
+      },
+      "description": "Snap the board/screen and let Piniso explain it"
+    },
+    "quiz-now": {
+      "suggested_key": {
+        "default": "Alt+Shift+Q"
+      },
+      "description": "Quiz me now on what I just watched"
+    },
+    "mark-moment": {
+      "description": "Mark this moment as important"
+    },
+    "talk": {
+      "description": "Start / stop voice talk with Piniso"
+    },
+    "float": {
+      "description": "Float Piniso on top of every window"
+    }
+  }
+}
