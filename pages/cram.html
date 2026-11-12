@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piniso night-before mode</title>
+<link rel="icon" href="../assets/icons/icon32.png">
+<link rel="stylesheet" href="page.css">
+<link rel="stylesheet" href="katex.css">
+<style>
+  .wrapc{max-width:900px;margin:26px auto 60px;padding:0 18px}
+  .top{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+  .top h1{font:400 38px/1 var(--f-serif);margin:0}
+  .top h1 em{font-style:italic}
+  .tpet{width:74px;flex:none}
+  .tpet svg{width:100%;height:auto}
+  .tabs{display:flex;gap:6px;margin:10px 0 16px;flex-wrap:wrap}
+  .tabs button{border:2px solid var(--ink);background:var(--paper2);border-radius:99px;padding:7px 14px;font:700 13px var(--f-ui);cursor:pointer;color:var(--ink)}
+  .tabs button.on{background:var(--ink);color:var(--paper)}
+  .pane{padding:18px 20px}
+  .sheet h2{font:400 26px var(--f-serif);margin:18px 0 6px}
+  .sheet h2:first-child{margin-top:0}
+  .sheet li{margin:3px 0}
+  .fl{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+  .fl>div{border:2px solid var(--ink);border-radius:12px;padding:8px 10px;background:var(--paper)}
+  .drill{text-align:center;padding:30px 20px}
+  .drill .big{font:400 30px/1.25 var(--f-serif);margin:16px 0;min-height:80px}
+  .drill .ans{font-size:22px;min-height:60px;margin:10px 0 18px}
+  .drill .timer{font:700 40px var(--f-mono)}
+  .row2{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+  .mcard{border:2px solid var(--ink);border-radius:14px;padding:16px;margin:10px 0;background:var(--paper)}
+  .mcard .a{display:none;margin-top:10px;padding-top:10px;border-top:1.5px dashed var(--line)}
+  .mcard.open .a{display:block}
+  @media print{.tabs,.noprint,.top .tpet{display:none!important}.pane{border:0!important;box-shadow:none!important}body{background:#fff!important}}
+</style>
+</head>
+<body>
+<div class="wrapc">
+  <div class="top"><div class="tpet" id="pet"></div><div><h1>Night-before <em>mode</em></h1><div class="muted" id="sub">Everything you need tonight, nothing else.</div></div></div>
+  <div class="tabs noprint" id="tabs"></div>
+  <div class="paper pane" id="pane"></div>
+</div>
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../shared/defaults.js"></script>
+<script src="../shared/store.js"></script>
+<script src="../shared/md.js"></script>
+<script src="../shared/icons.js"></script>
+<script src="../shared/pet.js"></script>
+<script src="../shared/audio.js"></script>
+<script src="common.js"></script>
+<script src="cram.js"></script>
+</body>
+</html>

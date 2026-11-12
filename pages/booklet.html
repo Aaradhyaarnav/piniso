@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piniso study booklet</title>
+<link rel="icon" href="../assets/icons/icon32.png">
+<link rel="stylesheet" href="page.css">
+<link rel="stylesheet" href="katex.css">
+<link rel="stylesheet" href="printkit.css">
+<link rel="stylesheet" href="booklet.css">
+<style id="pgsize">@page{size:A4;margin:0}</style>
+</head>
+<body>
+  <!-- step 1: choose -->
+  <div class="setup" id="setup">
+    <div class="shead">
+      <div class="spet" id="spet"></div>
+      <div>
+        <h1>Study <em>booklet</em></h1>
+        <div class="muted">Turn your lecture notes into a printable revision booklet: mind map, key points, formula boxes, diagrams, practice questions and cut-out flashcards.</div>
+      </div>
+    </div>
+    <div class="cols">
+      <section class="paper pick" aria-labelledby="h-pick">
+        <div class="row"><b id="h-pick">1. What goes in?</b><span class="sp"></span><input class="inp" id="q" placeholder="Search videos…" aria-label="Search videos" style="max-width:200px"></div>
+        <div id="list" class="list"></div>
+      </section>
+      <section class="paper bopts" aria-labelledby="h-opts">
+        <b id="h-opts">2. Your booklet</b>
+        <label class="lab" for="title">Title (chapter / unit name)</label>
+        <input class="inp" id="title" placeholder="e.g. Light – Reflection & Refraction">
+        <div class="lab">Split into</div>
+        <div id="split"></div>
+        <div class="lab">How much detail</div>
+        <div id="detail"></div>
+        <div class="lab">Layout</div>
+        <div id="density"></div>
+        <label class="ck" style="margin-top:12px"><input type="checkbox" id="unwatched"><span>Include parts of the video I haven’t watched yet</span></label>
+        <button class="btn pri wide" id="go" style="margin-top:14px">✨ Make my booklet</button>
+        <div class="small muted" id="hint" style="margin-top:8px">Uses your AI key once per chapter (about 20–40 seconds). You can change colours, size and sections after it’s made.</div>
+      </section>
+    </div>
+    <section class="paper saved" id="savedBox" hidden><b>Booklets you made</b><div id="saved"></div></section>
+  </div>
+
+  <!-- working -->
+  <div class="work" id="work" hidden role="status" aria-live="polite">
+    <div class="wpet" id="wpet"></div>
+    <div class="hand" id="wmsg">Reading your notes…</div>
+    <div class="bar"><i id="wbar"></i></div>
+  </div>
+
+  <!-- step 2: the booklet -->
+  <div class="tools" id="tools" hidden>
+    <button class="btn sm" id="back">← Topics</button>
+    <span class="tinfo small muted" id="pinfo"></span>
+    <span class="sp"></span>
+    <button class="btn sm" id="custBtn" aria-expanded="true" aria-controls="cust">⚙️ Customize</button>
+    <button class="btn sm" id="print">🖨️ Print</button>
+    <button class="btn sm pri" id="pdf">⬇️ Download PDF</button>
+  </div>
+  <div class="viewer" id="viewer" hidden>
+    <aside class="cust paper" id="cust" aria-label="Customize booklet"></aside>
+    <main class="book" id="book" aria-label="Booklet pages"></main>
+  </div>
+  <div class="pdfov" id="pdfov" hidden role="status" aria-live="polite"><div class="paper"><div class="hand" id="pdfmsg">Making your PDF…</div><div class="bar"><i id="pdfbar"></i></div></div></div>
+
+  <script src="../vendor/katex/katex.min.js"></script>
+  <script src="../vendor/print/html2canvas.min.js"></script>
+  <script src="../vendor/print/jspdf.umd.min.js"></script>
+  <script src="../shared/defaults.js"></script>
+  <script src="../shared/store.js"></script>
+  <script src="../shared/md.js"></script>
+  <script src="../shared/icons.js"></script>
+  <script src="../shared/pet.js"></script>
+  <script src="common.js"></script>
+  <script src="printkit.js"></script>
+  <script src="booklet.js"></script>
+</body>
+</html>

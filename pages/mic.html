@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Piniso — microphone</title>
+<link rel="stylesheet" href="page.css">
+<style>body{display:grid;place-items:center;min-height:100vh}.box{max-width:480px;padding:30px;text-align:center}.pet{display:flex;justify-content:center}</style></head>
+<body>
+<div class="box paper">
+  <div class="pet" id="pet"></div>
+  <h1 style="font-size:40px">Let me <em>hear</em> you 🎙️</h1>
+  <p class="muted" id="msg">For voice talk, your browser asks once for microphone permission. Piniso only listens while the talk panel is open, and the audio goes only to your chosen voice AI (Gemini or OpenAI).</p>
+  <button class="btn pri" id="go">Allow microphone</button>
+</div>
+<script src="../shared/defaults.js"></script><script src="../shared/store.js"></script><script src="../shared/md.js"></script><script src="../shared/icons.js"></script><script src="../shared/pet.js"></script><script src="common.js"></script>
+<script src="mic.js"></script>
+</body></html>

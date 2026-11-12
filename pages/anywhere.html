@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piniso — Study Anything</title>
+<link rel="icon" href="../assets/icons/icon32.png">
+<link rel="stylesheet" href="page.css">
+<style>
+  body{min-height:100vh}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 28px 120px}
+  .top{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .top .pet{width:70px}
+  .top h1{font-size:44px;line-height:.95}
+  .stage{position:relative;padding:12px;min-height:300px;display:grid;place-items:center}
+  .stage video{width:100%;max-height:62vh;border-radius:10px;background:#111;display:block}
+  .intro{max-width:620px;text-align:center;padding:28px 10px}
+  .intro .hand{font-size:26px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0;text-align:left}
+  @media (max-width:800px){.steps{grid-template-columns:1fr}}
+  .step{padding:14px;border:1.5px solid var(--ink);border-radius:14px;background:var(--paper2)}
+  .step>b:first-child{display:block;font:400 22px var(--f-serif)}
+  .bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center}
+  .live{display:inline-flex;align-items:center;gap:6px}
+  .live i{width:10px;height:10px;border-radius:50%;background:#FF5D5D;animation:bl 1s infinite}
+  @keyframes bl{50%{opacity:.3}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><div class="pet" id="tp"></div><div><h1>Study <em>anything</em></h1><div class="muted">Desktop apps · offline videos · PDFs · Zoom/Meet classes · any window</div></div></div>
+  <div class="stage paper pat-grid" id="stage">
+    <div class="intro" id="intro">
+      <div class="hand">Share a window and I’ll study it with you ✏️</div>
+      <div class="steps">
+        <div class="step"><b>1. Share</b>Pick the window or screen with your lecture (PW app, Unacademy app, VLC, a PDF…). Tick <b>“Share audio”</b> so I can hear the teacher.</div>
+        <div class="step"><b>2. Float me</b>Press <b>Float Piniso</b> — I stay on top of every window, even outside the browser.</div>
+        <div class="step"><b>3. Study</b>I write notes, crack useful jokes, quiz you, read the board, and you can talk to me.</div>
+      </div>
+      <button class="btn pri" id="start">Choose window to study</button>
+      <p class="small muted">Nothing is recorded or uploaded except short pieces sent to your own AI key for notes. Stop sharing anytime.</p>
+    </div>
+    <video id="v" muted playsinline hidden></video>
+  </div>
+  <div class="bar" id="bar" hidden>
+    <span class="live pill"><i></i> Studying your window</span>
+    <span class="pill" id="aud"></span>
+    <button class="btn sm" id="pause">Pause</button>
+    <button class="btn sm pri" id="float">Float Piniso on top</button>
+    <button class="btn sm" id="talk">Talk</button>
+    <button class="btn sm" id="snap">Explain screen</button>
+    <span class="sp"></span>
+    <button class="btn sm danger" id="stop">Stop</button>
+  </div>
+</div>
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../shared/defaults.js"></script>
+<script src="../shared/lines.js"></script>
+<script src="../shared/store.js"></script>
+<script src="../shared/md.js"></script>
+<script src="../shared/icons.js"></script>
+<script src="../shared/pet.js"></script>
+<script src="../vendor/three/pz3.min.js"></script>
+<script src="../shared/pet3d.js"></script>
+<script src="../shared/audio.js"></script>
+<script src="../content/ui-css.js"></script>
+<script src="../content/v4-css.js"></script>
+<script src="common.js"></script>
+<script src="anywhere-pre.js"></script>
+<script src="../content/util.js"></script>
+<script src="../content/video.js"></script>
+<script src="../content/transcript.js"></script>
+  <script src="../content/timeline.js"></script>
+<script src="../content/brain.js"></script>
+<script src="../content/ui.js"></script>
+<script src="../content/quiz.js"></script>
+<script src="../content/report.js"></script>
+<script src="../content/talk.js"></script>
+<script src="../content/extras.js"></script>
+  <script src="../content/plus.js"></script>
+  <script src="../content/magic.js"></script>
+<script src="../content/v4.js"></script>
+<script src="../content/app.js"></script>
+<script src="anywhere.js"></script>
+</body>
+</html>

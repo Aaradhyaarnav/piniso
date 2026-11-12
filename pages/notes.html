@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piniso notes</title>
+<link rel="icon" href="../assets/icons/icon32.png">
+<link rel="stylesheet" href="page.css">
+<link rel="stylesheet" href="katex.css">
+<link rel="stylesheet" href="printkit.css">
+<link rel="stylesheet" href="notes.css">
+<style id="pgsize">@page{size:A4;margin:0}</style>
+</head>
+<body>
+  <div class="ntools" id="tools">
+    <a class="btn sm ghost" href="options.html#library">← Library</a>
+    <span class="small muted" id="pinfo"></span>
+    <span class="sp"></span>
+    <button class="btn sm" id="md">⬇️ Markdown</button>
+    <button class="btn sm" id="book">📘 Make a booklet</button>
+    <button class="btn sm" id="print">🖨️ Print</button>
+    <button class="btn sm pri" id="pdf">⬇️ Download PDF</button>
+  </div>
+  <div class="nopts paper" id="opts" aria-label="Print options"></div>
+  <main id="pages" aria-label="Notes pages"><p class="muted" style="text-align:center;margin:40px">Loading…</p></main>
+  <div class="pdfov" id="pdfov" hidden role="status" aria-live="polite"><div class="paper"><div class="hand" id="pdfmsg">Making your PDF…</div><div class="bar"><i id="pdfbar"></i></div></div></div>
+  <script src="../vendor/katex/katex.min.js"></script>
+  <script src="../vendor/print/html2canvas.min.js"></script>
+  <script src="../vendor/print/jspdf.umd.min.js"></script>
+  <script src="../shared/defaults.js"></script>
+  <script src="../shared/store.js"></script>
+  <script src="../shared/md.js"></script>
+  <script src="../shared/icons.js"></script>
+  <script src="../shared/pet.js"></script>
+  <script src="common.js"></script>
+  <script src="printkit.js"></script>
+  <script src="notes.js"></script>
+</body>
+</html>
